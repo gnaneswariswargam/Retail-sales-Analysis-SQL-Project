@@ -68,17 +68,17 @@ FROM retail_sales
 WHERE sale_date = '2022-11-05';
 
 Write a SQL query to retrieve all transactions where the category is 'Clothing' and the quantity sold is more than 4 in the month of Nov-2022:
-SELECT
 
-  *
+SELECT *
   
 FROM retail_sales
 
 WHERE 
 
     category = 'Clothing'
-    AND 
     
+    AND 
+
     TO_CHAR(sale_date, 'YYYY-MM') = '2022-11'
     
     AND
@@ -146,6 +146,7 @@ SELECT
     COUNT(DISTINCT customer_id) as cnt_unique_cs
 FROM retail_sales
 GROUP BY category
+
 8.**Write a SQL query to create each shift and number of orders (Example Morning <12, Afternoon Between 12 & 17, Evening >17):**
 WITH hourly_sale
 AS
